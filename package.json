@@ -2,7 +2,8 @@
   "name": "202301-w2chwe-carles-galan",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app/js/index.js",
+  "type": "module",
   "scripts": {
     "test": "jest",
     "test:dev": "jest --watchAll",
