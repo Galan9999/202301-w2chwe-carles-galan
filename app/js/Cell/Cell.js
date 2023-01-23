@@ -8,6 +8,7 @@ class Cell {
     this.rowNumber = rowNumber;
     this.columnNumber = columnNumber;
     this.isAlive = Boolean(Math.random() < 0.3);
+    this.aliveNeighbours = 0;
   }
 
   findAliveNeighbours(newGrid) {
@@ -27,6 +28,16 @@ class Cell {
     }
 
     this.aliveNeighbours = aliveNeighbours;
+  }
+
+  willBeAlive() {
+    if (this.isAlive === true && this.numberOfNeighbours < 2) {
+      this.isAlive = false;
+    } else if (this.isAlive === true && this.numberOfNeighbours > 3) {
+      this.isAlive = false;
+    } else if (this.isAlive === false && this.numberOfNeighbours === 3) {
+      this.isAlive = true;
+    }
   }
 }
 
